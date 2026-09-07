@@ -9,89 +9,84 @@
 <meta name="apple-mobile-web-app-title" content="Gatsby Desk" />
 <meta name="theme-color" content="#07080a" />
 <title>GATSBY DESK</title>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=Instrument+Sans:wght@500;700&display=swap" rel="stylesheet" />
 <style>
   :root { --bg:#07080a; --card:#14171d; --ink:#eef2f6; --muted:#8b93a0; --line:#242a34; --green:#3adf7a; --red:#ff6b57; --gold:#e7c37a; }
   * { box-sizing:border-box; margin:0; padding:0; }
-  body { font-family:Instrument Sans,system-ui,-apple-system,sans-serif; background:var(--bg); color:var(--ink); min-height:100dvh; padding:calc(12px + env(safe-area-inset-top)) 12px calc(16px + env(safe-area-inset-bottom)); }
+  body { font-family:-apple-system,system-ui,sans-serif; background:var(--bg); color:var(--ink); min-height:100dvh; padding:calc(12px + env(safe-area-inset-top)) 12px 20px; }
   .desk { max-width:720px; margin:0 auto; }
   header { display:flex; justify-content:space-between; align-items:center; margin-bottom:12px; }
-  .mark { width:34px; height:34px; border-radius:10px; background:var(--gold); color:#111; display:grid; place-items:center; font-family:\"IBM Plex Mono\",monospace; font-weight:600; }
+  .mark { width:34px; height:34px; border-radius:10px; background:var(--gold); color:#111; display:grid; place-items:center; font-weight:700; }
   .brand { display:flex; gap:10px; align-items:center; font-weight:700; }
   .brand small { display:block; color:var(--muted); font-size:11px; font-weight:500; }
-  .pill { background:#163524; color:var(--green); border-radius:99px; padding:6px 10px; font-family:\"IBM Plex Mono\",monospace; font-size:11px; }
-  .dot { width:7px; height:7px; background:var(--green); border-radius:50%; display:inline-block; margin-right:6px; animation:p 1.4s infinite; }
-  @keyframes p { 50%{opacity:.3} }
+  .pill { background:#163524; color:var(--green); border-radius:99px; padding:6px 10px; font-size:11px; }
   .kpis { display:grid; grid-template-columns:1fr 1fr; gap:8px; }
   .card { background:var(--card); border:1px solid var(--line); border-radius:16px; padding:13px; }
   .label { font-size:10px; color:var(--muted); letter-spacing:.08em; text-transform:uppercase; }
   .big { font-size:24px; font-weight:700; margin-top:6px; }
-  .sub { font-family:\"IBM Plex Mono\",monospace; font-size:11px; color:var(--muted); margin-top:5px; line-height:1.4; }
-  .gate { grid-column:1/-1; border-color:#1e3c2b; background:linear-gradient(180deg,#13261b,#14171d); }
-  .log { margin-top:8px; font-family:\"IBM Plex Mono\",monospace; font-size:11px; }
+  .sub { font-size:11px; color:var(--muted); margin-top:5px; }
+  .gate { grid-column:1/-1; border-color:#1e3c2b; }
+  .log { margin-top:8px; font-size:11px; }
   .log div { padding:7px 0; border-bottom:1px solid #1d232c; }
-  .meta { margin-top:10px; color:var(--muted); font-size:11px; font-family:\"IBM Plex Mono\",monospace; line-height:1.45; }
+  .meta { margin-top:10px; color:var(--muted); font-size:11px; }
 </style>
 </head>
 <body>
 <div class="desk">
   <header>
-    <div class="brand"><div class="mark">G</div><div>GATSBY DESK<small>Path A \u00b7 live feed</small></div></div>
-    <span class="pill"><i class="dot"></i><span id="clock">--</span></span>
+    <div class="brand"><div class="mark">G</div><div>GATSBY DESK<small>Path A live feed</small></div></div>
+    <span class="pill"><span id="clock">--</span></span>
   </header>
   <section class="kpis">
-    <div class="card"><div class="label">Balance</div><div class="big" id="bal">\u2014</div><div class="sub" id="balSub">loading</div></div>
-    <div class="card"><div class="label">P&L</div><div class="big" id="pnl">\u2014</div><div class="sub" id="pnlSub">start $50</div></div>
-    <div class="card"><div class="label">SOL mark</div><div class="big" id="mark">\u2014</div><div class="sub" id="book">bid / ask</div></div>
-    <div class="card"><div class="label">Mission</div><div class="big" id="mission">\u2014</div><div class="sub" id="stamp">stamp</div></div>
-    <div class="card gate"><div class="label">Order / Palermo</div><div class="big" id="gate">\u2014</div><div class="sub" id="order">\u2014</div></div>
+    <div class="card"><div class="label">Balance</div><div class="big" id="bal">$50.00</div><div class="sub" id="balSub">loading feed</div></div>
+    <div class="card"><div class="label">P and L</div><div class="big" id="pnl">$0.00</div><div class="sub">start $50</div></div>
+    <div class="card"><div class="label">SOL mark</div><div class="big" id="mark">--</div><div class="sub" id="book">bid / ask</div></div>
+    <div class="card"><div class="label">Mission</div><div class="big" id="mission">--</div><div class="sub" id="stamp">stamp</div></div>
+    <div class="card gate"><div class="label">Order / Palermo</div><div class="big" id="gate">A-001</div><div class="sub" id="order">waiting for feed</div></div>
   </section>
   <div class="card" style="margin-top:8px"><div class="label">Log</div><div class="log" id="log"></div></div>
-  <p class="meta" id="meta">Polling book every 15s \u00b7 account snapshot from GitHub</p>
+  <p class="meta" id="meta">If numbers never move, this host blocked JS. Use GitHub Pages.</p>
 </div>
 <script>
-const DATA = \"https://raw.githubusercontent.com/lxrdgatsby/gatsby-desk/main/desk.json\";
-const START = Date.parse(\"2026-09-07T02:44:16Z\");
+const DATA = 'https://raw.githubusercontent.com/lxrdgatsby/gatsby-desk/main/desk.json';
+const START = Date.parse('2026-09-07T02:44:16Z');
 let snap = null;
 function clock() {
-  const now = new Date();
-  document.getElementById(\"clock\").textContent = now.toLocaleTimeString(\"en-US\",{timeZone:\"America/Los_Angeles\",hour12:false}) + \" PT\";
-  const mins = Math.max(0, Math.floor((Date.now()-START)/60000));
-  document.getElementById(\"mission\").textContent = String(Math.floor(mins/60)).padStart(2,\"0\") + \":\" + String(mins%60).padStart(2,\"0\");
+  var now = new Date();
+  document.getElementById('clock').textContent = now.toLocaleTimeString('en-US',{timeZone:'America/Los_Angeles',hour12:false}) + ' PT';
+  var mins = Math.max(0, Math.floor((Date.now()-START)/60000));
+  document.getElementById('mission').textContent = String(Math.floor(mins/60)).padStart(2,'0') + ':' + String(mins%60).padStart(2,'0');
 }
 clock(); setInterval(clock, 1000);
 function paint(d, liveMark) {
   snap = d;
-  document.getElementById(\"bal\").textContent = \"$\" + Number(d.balance).toFixed(2);
-  document.getElementById(\"balSub\").textContent = \"CASH $\" + Number(d.cash).toFixed(2) + \" \u00b7 BP $\" + Number(d.buying_power).toFixed(2);
-  const pnl = Number(d.pnl);
-  const el = document.getElementById(\"pnl\");
-  el.textContent = (pnl>=0?\"+$\":\"-$") + Math.abs(pnl).toFixed(2);
-  el.style.color = pnl>0 ? \"#3adf7a\" : pnl<0 ? \"#ff6b57\" : \"#eef2f6\";
-  const mark = liveMark != null ? liveMark : d.sol.mark;
-  document.getElementById(\"mark\").textContent = \"$\" + Number(mark).toFixed(2);
-  document.getElementById(\"book\").textContent = \"bid \" + Number(d.sol.bid).toFixed(2) + \" / ask \" + Number(d.sol.ask).toFixed(2);
-  document.getElementById(\"stamp\").textContent = \"desk \" + String(d.stamped_at).replace(\"T\",\" \").slice(0,16);
-  document.getElementById(\"gate\").textContent = d.gate;
-  const o = d.order;
-  document.getElementById(\"order\").textContent = o.symbol + \" \" + o.side + \" \" + o.qty + \" @ \" + o.limit + \" \u00b7 filled \" + o.filled + \" \u00b7 \" + o.state;
-  document.getElementById(\"log\").innerHTML = (d.log||[]).map(x => \"<div>\"+x+\"</div>\").join(\"\");
-  document.getElementById(\"meta\").textContent = \"Book poll 15s \u00b7 account JSON 60s \u00b7 last \" + d.stamped_at;
+  document.getElementById('bal').textContent = '$' + Number(d.balance).toFixed(2);
+  document.getElementById('balSub').textContent = 'CASH $' + Number(d.cash).toFixed(2) + ' / BP $' + Number(d.buying_power).toFixed(2);
+  var pnl = Number(d.pnl);
+  document.getElementById('pnl').textContent = (pnl>=0?'+$':'-$') + Math.abs(pnl).toFixed(2);
+  var mark = liveMark != null ? liveMark : d.sol.mark;
+  document.getElementById('mark').textContent = '$' + Number(mark).toFixed(2);
+  document.getElementById('book').textContent = 'bid ' + Number(d.sol.bid).toFixed(2) + ' / ask ' + Number(d.sol.ask).toFixed(2);
+  document.getElementById('stamp').textContent = String(d.stamped_at);
+  document.getElementById('gate').textContent = d.gate;
+  var o = d.order;
+  document.getElementById('order').textContent = o.symbol + ' ' + o.side + ' ' + o.qty + ' @ ' + o.limit + ' filled ' + o.filled + ' ' + o.state;
+  document.getElementById('log').innerHTML = (d.log||[]).map(function(x){return '<div>'+x+'</div>';}).join('');
+  document.getElementById('meta').textContent = 'last ' + d.stamped_at;
 }
-async function loadDesk() {
-  const r = await fetch(DATA + \"?t=\" + Date.now(), { cache: \"no-store\" });
-  if (!r.ok) throw new Error(\"desk.json \" + r.status);
-  paint(await r.json());
+function loadDesk() {
+  fetch(DATA + '?t=' + Date.now(), {cache:'no-store'})
+    .then(function(r){ if(!r.ok) throw new Error('desk.json '+r.status); return r.json(); })
+    .then(paint)
+    .catch(function(e){ document.getElementById('order').textContent = String(e); });
 }
-async function loadSol() {
-  try {
-    const r = await fetch(\"https://api.binance.com/api/v3/ticker/price?symbol=SOLUSDT\");
-    const j = await r.json();
-    if (snap) paint(snap, Number(j.price));
-  } catch(e) {}
+function loadSol() {
+  fetch('https://api.binance.com/api/v3/ticker/price?symbol=SOLUSDT')
+    .then(function(r){ return r.json(); })
+    .then(function(j){ if(snap) paint(snap, Number(j.price)); })
+    .catch(function(){});
 }
-loadDesk().catch(e => { document.getElementById(\"gate\").textContent = \"FEED ERROR\"; document.getElementById(\"order\").textContent = String(e); });
-setInterval(() => loadDesk().catch(()=>{}), 60000);
+loadDesk();
+setInterval(loadDesk, 60000);
 setInterval(loadSol, 15000);
 loadSol();
 </script>
