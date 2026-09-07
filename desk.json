@@ -1,41 +1,38 @@
 {
-  "stamped_at": "2026-09-06T21:25:45-07:00",
-  "session": "B-001",
+  "stamped_at": "2026-09-06T22:01:20-07:00",
+  "session": "A-001",
   "balance": 49.65,
   "cash": 49.65,
   "buying_power": 44.65,
   "pnl": -0.35,
   "start_cash": 50,
-  "session_start": "2026-09-07T04:21:31Z",
-  "flatten_note": "08:00 PT Mon",
+  "session_start": "2026-09-07T02:44:16Z",
+  "flatten_note": "SOL position closed after fill; cash restored",
   "order": {
-    "id_short": "6a9e3bcb",
-    "symbol": "WIF-USD",
+    "id_short": "6a9e2500",
+    "symbol": "SOL",
     "side": "buy",
     "type": "limit",
-    "limit": 0.215,
-    "qty": 23.2558,
-    "filled": 0,
-    "state": "open",
-    "invalidation": 0.209,
-    "review": 0.222
+    "limit": 106.5,
+    "qty": 0.14084,
+    "filled": 0.14084,
+    "state": "filled",
+    "invalidation": 104.5,
+    "review": 110.5
   },
   "sol": {
-    "mark": 0.21508,
-    "bid": 0.21298,
-    "ask": 0.21719
+    "mark": 105.1073,
+    "bid": 104.1058,
+    "ask": 106.1088
   },
-  "wif": {
-    "mark": 0.21508,
-    "bid": 0.21298,
-    "ask": 0.21719
-  },
-  "gate": "B-001 RESTING",
+  "gate": "FILLED",
   "log": [
-    "21:10 A-001 FILL 0.14084 SOL @ 106.49",
-    "21:16 SELL FILL 0.14084 SOL @ 104.08 credit 14.65",
-    "21:16 HELS Flat. Cash 49.65. Ticket -0.35",
-    "21:21 ASTR B-001 23.2558 WIF @ 0.215 $5",
-    "21:25 HELS WIF 0.2151. Bid 0.2130 / ask 0.2172. Fill 0"
+    "22:01 HELS A-001 desk refresh",
+    "Order 6a9e2500 SOL buy limit 106.5 qty 0.14084 FILL",
+    "Fill @106.49 then sold; crypto_value 0",
+    "Balance 49.65 cash 49.65 BP 44.65",
+    "PnL -0.35 vs start 50",
+    "SOL mark 105.11 bid 104.11 ask 106.11",
+    "Gate FILLED. Flat."
   ]
 }
