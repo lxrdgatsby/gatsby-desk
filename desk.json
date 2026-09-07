@@ -1,37 +1,42 @@
 {
-  "stamped_at": "2026-09-06T21:13:48-07:00",
-  "session": "A-001",
-  "balance": 49.768157841262,
-  "cash": 35,
-  "buying_power": 35,
-  "pnl": -0.231842158738,
+  "stamped_at": "2026-09-06T21:25:00-07:00",
+  "session": "B-001",
+  "balance": 49.65,
+  "cash": 49.65,
+  "buying_power": 44.65,
+  "pnl": -0.35,
   "start_cash": 50,
   "session_start": "2026-09-07T02:44:16Z",
   "flatten_note": "08:00 PT Mon",
   "order": {
-    "id_short": "6a9e2500",
-    "symbol": "SOL-USD",
+    "id_short": "6a9e3bcb",
+    "symbol": "WIF-USD",
     "side": "buy",
     "type": "limit",
-    "limit": 106.5,
-    "qty": 0.14084,
-    "filled": 0.14084,
-    "state": "filled",
-    "invalidation": 104.5,
-    "review": 110.5
+    "limit": 0.215,
+    "qty": 23.2558,
+    "filled": 0,
+    "state": "open",
+    "invalidation": 0.209,
+    "review": 0.222
   },
   "sol": {
-    "mark": 104.85761854,
-    "bid": 103.86101065,
-    "ask": 105.85422643
+    "mark": 0.21538,
+    "bid": 0.21328,
+    "ask": 0.21749
   },
-  "gate": "FILLED",
+  "wif": {
+    "mark": 0.21538,
+    "bid": 0.21328,
+    "ask": 0.21749
+  },
+  "gate": "B-001 RESTING",
   "log": [
-    "19:37 PROF Connector live. Agentic $50 cash.",
-    "19:42 PALM Veto market. MM spread ~1.9%.",
-    "19:44 ASTR PLACED 0.14084 SOL @ 106.50.",
-    "20:07 HELS Mark 105.75. Bid 104.75 / ask 106.75. Fill 0.",
-    "21:10 FILL 0.14084 SOL @ 106.4939 avg.",
-    "21:13 HELS Mark 104.86. Bid 103.86 / ask 105.85. PnL -0.23."
+    "21:10 A-001 FILL 0.14084 SOL @ 106.49",
+    "21:16 SELL FILL 0.14084 SOL @ 104.08 credit 14.65",
+    "21:16 HELS Flat. Cash 49.65. Ticket -0.35",
+    "21:19 TOKY Scan listed. LINK +7% chase VETO",
+    "21:21 ASTR B-001 23.2558 WIF @ 0.215 $5",
+    "21:25 HELS Mark 0.2154. Bid 0.2133 / ask 0.2175. Fill 0"
   ]
 }
