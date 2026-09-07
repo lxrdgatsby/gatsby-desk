@@ -1,5 +1,5 @@
 {
-  "stamped_at": "2026-09-06T23:01:25-07:00",
+  "stamped_at": "2026-09-07T00:16:28-07:00",
   "session": "A-001",
   "balance": 49.65,
   "cash": 49.65,
@@ -21,16 +21,16 @@
     "review": 110.5
   },
   "sol": {
-    "mark": 105.11737812,
-    "bid": 104.12197725,
-    "ask": 106.11277899
+    "mark": 105.45592502,
+    "bid": 104.46102492,
+    "ask": 106.45082512
   },
   "gate": "FILLED",
   "log": [
     "22:44 HELS A-001 SOL buy 0.14084 @106.5 $15",
     "23:10 A-001 FILLED 0.14084 @106.4939",
-    "23:01 HELS portfolio flat. Crypto 0. Cash 49.65",
-    "23:01 SOL mark 105.12 bid 104.12 ask 106.11",
-    "23:01 A-001 gate FILLED. PnL -0.35"
+    "00:16 HELS portfolio flat. Crypto 0. Cash 49.65",
+    "00:16 SOL mark 105.46 bid 104.46 ask 106.45",
+    "00:16 A-001 gate FILLED. PnL -0.35"
   ]
 }
