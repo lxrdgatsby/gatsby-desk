@@ -1,0 +1,35 @@
+{
+  "stamped_at": "2026-09-06T20:09:00-07:00",
+  "session": "A-001",
+  "balance": 50,
+  "cash": 50,
+  "buying_power": 35,
+  "pnl": 0,
+  "start_cash": 50,
+  "session_start": "2026-09-07T02:44:16Z",
+  "flatten_note": "08:00 PT Mon",
+  "order": {
+    "id_short": "6a9e2500",
+    "symbol": "SOL-USD",
+    "side": "buy",
+    "type": "limit",
+    "limit": 106.5,
+    "qty": 0.14084,
+    "filled": 0,
+    "state": "open",
+    "invalidation": 104.5,
+    "review": 110.5
+  },
+  "sol": {
+    "mark": 105.75,
+    "bid": 104.75,
+    "ask": 106.75
+  },
+  "gate": "A-001 RESTING",
+  "log": [
+    "19:37 PROF Connector live. Agentic $50 cash.",
+    "19:42 PALM Veto market. MM spread ~1.9%.",
+    "19:44 ASTR PLACED 0.14084 SOL @ 106.50.",
+    "20:07 HELS Mark 105.75. Bid 104.75 / ask 106.75. Fill 0."
+  ]
+}
