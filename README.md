@@ -1,34 +1,58 @@
 # Gatsby Desk
 
-Dark mobile dashboard for Path A.
+Dark luxury command center for Path A. Live GitHub Pages site, not a file dump.
 
 ## Live URL
 
 https://lxrdgatsby.github.io/gatsby-desk/
 
-Open that URL in Safari. It is a real GitHub Pages site that runs JavaScript (clock ticks, numbers fill). Do not use htmlpreview, jsDelivr, or raw.githubusercontent.com as the site.
+Open that URL in Safari (phone) or any browser (desktop). JavaScript must run: the clock ticks, the ridge/chord draw, and numbers fill from `desk.json`. Do not use htmlpreview, jsDelivr, or raw.githubusercontent.com as the site.
 
 ## Add to Home Screen (Safari only)
 
 1. Open https://lxrdgatsby.github.io/gatsby-desk/ in Safari on iPhone.
-2. Tap the Share button.
+2. Tap Share.
 3. Tap Add to Home Screen.
 4. Tap Add.
 
-Safari only. Other browsers and downloaded HTML files are not the home-screen app.
+## Public contract (`desk.json` is the account bus)
 
-## Hourly restamp
+This static site never calls Robinhood from the browser.
 
-A Grok Automation named **Gatsby Desk refresh** already exists. Each hour it rewrites `desk.json` on `main` (balance, P/L, SOL book, order state, log). This Pages site fetches `./desk.json` from the same origin every 60 seconds, so the phone updates without a file download.
+Writers (push a new `desk.json` to `main`):
 
-Binance SOL last is polled every 15 seconds for the mark. Robinhood bid/ask stay on the values from `desk.json`.
+- Grok chat, on demand
+- Existing hourly automation **Gatsby Desk refresh**
+
+Readers:
+
+- This Pages site fetches `./desk.json?t=<epoch>` every 30 seconds
+- After each GitHub Actions deploy, the new file is live on the same origin
+
+Binance SOLUSDT is polled every 15 seconds for last price display only. Robinhood bid / ask / mark in `desk.json` stay the source of truth for the gate.
+
+### How fills show up
+
+Write `desk.json` with `order.filled > 0` or `order.state` closed with a position. On the next 30s poll (or the next Actions deploy):
+
+- Gate text becomes **FILLED**
+- Crew hot outline moves to **HELSINKI**
+- A HELS log line is appended
+- Sparkline steps to the new equity
+
+Flatten or a dead order (`cancelled` / `rejected` / gate DEAD or FLAT):
+
+- Gate text **DEAD** or **FLAT**
+- Crew hot outline moves to **BERLIN**
+
+While resting, Palermo stays hot and the red pin marks the reserved working order.
+
+Human confirm for ASTRA preview/place happens in Grok, not in this page. There is no trade button.
 
 ## Turn Pages on
 
-If the first deploy is waiting:
+If a deploy is waiting:
 
 Settings -> Pages -> Source -> GitHub Actions
 
-If Actions cannot flip the source, the same click on branch `main` / root also publishes. Later pushes to `main` auto-deploy.
-
-Do not download HTML. Do not use htmlpreview.github.io.
+Later pushes to `main` auto-deploy.
