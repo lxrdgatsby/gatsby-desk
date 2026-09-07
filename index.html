@@ -1,132 +1,262 @@
 <!DOCTYPE html>
-<html lang='en'>
+<html lang="en">
 <head>
-<meta charset='UTF-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1, viewport-fit=cover'>
-<meta name='apple-mobile-web-app-capable' content='yes'>
-<meta name='mobile-web-app-capable' content='yes'>
-<meta name='apple-mobile-web-app-status-bar-style' content='black-translucent'>
-<meta name='apple-mobile-web-app-title' content='Gatsby Desk'>
-<meta name='theme-color' content='#07080a'>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Gatsby Desk">
+<meta name="theme-color" content="#07080a">
 <title>GATSBY DESK</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root {
     --bg: #07080a;
-    --card: #14171d;
+    --desk: #10131a;
+    --card: #171b22;
     --ink: #eef2f6;
     --muted: #8b93a0;
-    --line: #242a34;
+    --line: #262c36;
     --green: #3adf7a;
+    --green-dim: #163524;
     --red: #ff6b57;
     --gold: #e7c37a;
+    --blue: #7aa7ff;
+    --amber: #e0a34a;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   html, body { background: var(--bg); color: var(--ink); }
   body {
-    font-family: -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+    font-family: "Instrument Sans", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
     min-height: 100dvh;
-    padding: calc(14px + env(safe-area-inset-top)) 14px calc(22px + env(safe-area-inset-bottom));
+    padding: calc(14px + env(safe-area-inset-top)) 14px calc(18px + env(safe-area-inset-bottom));
   }
-  .desk { max-width: 720px; margin: 0 auto; }
+  .desk {
+    max-width: 1280px;
+    margin: 0 auto;
+    background: var(--desk);
+    border: 1px solid var(--line);
+    border-radius: 28px;
+    padding: 16px 16px 12px;
+    box-shadow: 0 24px 60px rgba(0,0,0,.35);
+  }
   header {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    gap: 12px;
-    margin-bottom: 14px;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 4px 6px 14px;
   }
-  .brand { display: flex; gap: 10px; align-items: center; font-weight: 700; letter-spacing: 0.04em; }
+  .brand { display: flex; align-items: center; gap: 10px; font-weight: 700; letter-spacing: .04em; }
   .mark {
     width: 34px; height: 34px; border-radius: 10px;
     background: var(--gold); color: #111;
-    display: grid; place-items: center; font-weight: 800;
+    display: grid; place-items: center;
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-weight: 700; font-size: 16px;
   }
-  .brand small { display: block; color: var(--muted); font-size: 11px; font-weight: 500; letter-spacing: 0; }
-  .live { text-align: right; }
+  .brand small { display: block; font-weight: 500; color: var(--muted); font-size: 12px; letter-spacing: 0; }
+  .live {
+    display: flex; align-items: center; gap: 10px;
+    font-family: "IBM Plex Mono", ui-monospace, monospace; font-size: 12px;
+  }
   .pill {
     display: inline-flex; align-items: center; gap: 6px;
-    background: #163524; color: var(--green);
-    border-radius: 99px; padding: 6px 10px; font-size: 11px; font-weight: 600;
+    background: var(--green-dim); color: var(--green);
+    border-radius: 99px; padding: 6px 10px; font-weight: 600;
   }
-  .dot {
-    width: 7px; height: 7px; border-radius: 50%; background: var(--green);
-    animation: pulse 1.6s infinite;
-  }
-  @keyframes pulse { 50% { opacity: 0.35; } }
-  #clock { display: block; margin-top: 6px; font-variant-numeric: tabular-nums; font-size: 12px; color: var(--muted); }
-  .kpis { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .dot { width: 8px; height: 8px; background: var(--green); border-radius: 50%; animation: pulse 1.6s infinite; }
+  @keyframes pulse { 50% { opacity: .35; } }
+  .kpis { display: grid; grid-template-columns: 1.3fr 1fr 1fr 1.15fr; gap: 10px; }
   .card {
     background: var(--card);
     border: 1px solid var(--line);
     border-radius: 16px;
-    padding: 13px;
+    padding: 14px 16px;
   }
-  .label { font-size: 10px; color: var(--muted); letter-spacing: 0.08em; text-transform: uppercase; }
-  .big { font-size: 24px; font-weight: 700; margin-top: 6px; font-variant-numeric: tabular-nums; }
-  .sub { font-size: 11px; color: var(--muted); margin-top: 5px; }
+  .label { font-size: 11px; color: var(--muted); letter-spacing: .08em; text-transform: uppercase; }
+  .big { font-size: 28px; font-weight: 700; margin-top: 6px; letter-spacing: -.03em; font-variant-numeric: tabular-nums; }
+  .sub { font-family: "IBM Plex Mono", ui-monospace, monospace; font-size: 11px; color: var(--muted); margin-top: 4px; }
   .pos { color: var(--green); }
   .neg { color: var(--red); }
-  .gate { grid-column: 1 / -1; border-color: #1e3c2b; }
-  .log-card { margin-top: 8px; }
-  .log { margin-top: 8px; font-size: 11px; font-variant-numeric: tabular-nums; }
-  .log div { padding: 7px 0; border-bottom: 1px solid #1d232c; }
-  .log div:last-child { border-bottom: 0; }
-  .meta { margin-top: 10px; color: var(--muted); font-size: 11px; }
+  .gate { background: #102418; border-color: #1e3c2b; }
+  .gate .big { font-size: 16px; margin-top: 10px; }
+  .bars { display: flex; gap: 3px; margin-top: 10px; }
+  .bars i { flex: 1; height: 7px; background: #1d3a2a; border-radius: 99px; }
+  .bars i.on { background: var(--green); }
+  .grid { display: grid; grid-template-columns: 1.15fr 1fr; gap: 10px; margin-top: 10px; }
+  .chart { height: 150px; position: relative; }
+  svg { width: 100%; height: 100%; display: block; }
+  .log { font-family: "IBM Plex Mono", ui-monospace, monospace; font-size: 11.5px; max-height: 210px; overflow: auto; margin-top: 6px; }
+  .log-row { display: grid; grid-template-columns: 54px 52px 1fr; gap: 8px; padding: 6px 0; border-bottom: 1px solid #1d232c; }
+  .role { color: var(--blue); font-weight: 600; }
+  .mid { display: grid; grid-template-columns: 1.2fr .9fr .9fr; gap: 10px; margin-top: 10px; }
+  canvas { width: 100%; height: 160px; display: block; }
+  .stats { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 8px; font-family: "IBM Plex Mono", ui-monospace, monospace; font-size: 12px; }
+  .chip { background: #12161d; border: 1px solid var(--line); border-radius: 10px; padding: 8px 10px; }
+  .chip b { display: block; font-size: 16px; color: var(--ink); }
+  .flow {
+    height: 150px; position: relative;
+    background: radial-gradient(80% 80% at 70% 20%, #182033, #12161d);
+    border-radius: 12px; overflow: hidden;
+  }
+  .node {
+    position: absolute; border-radius: 50%;
+    display: grid; place-items: center; color: #fff; font-size: 10px; font-weight: 700;
+    box-shadow: 0 8px 18px rgba(0,0,0,.35);
+  }
+  .crew { display: grid; grid-template-columns: repeat(10, 1fr); gap: 6px; margin-top: 10px; }
+  .agent {
+    background: var(--card); border: 1px solid var(--line);
+    border-radius: 12px; padding: 8px 6px 7px; text-align: center;
+  }
+  .face {
+    width: 36px; height: 36px; border-radius: 50%; margin: 0 auto 6px;
+    display: grid; place-items: center; font-size: 11px; font-weight: 700; color: #fff;
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+  }
+  .agent strong { display: block; font-size: 10px; letter-spacing: .04em; }
+  .agent span { display: block; font-size: 9px; color: var(--muted); }
+  .hot { outline: 2px solid var(--green); outline-offset: 0; }
+  footer {
+    display: flex; justify-content: space-between; align-items: center; gap: 10px;
+    padding: 10px 6px 2px; color: var(--muted);
+    font-size: 11px; font-family: "IBM Plex Mono", ui-monospace, monospace;
+  }
+  @media (max-width: 980px) {
+    .kpis, .grid, .mid { grid-template-columns: 1fr 1fr; }
+    .crew { grid-template-columns: repeat(5, 1fr); }
+    footer { flex-direction: column; align-items: flex-start; }
+  }
+  @media (max-width: 640px) {
+    .kpis, .grid, .mid { grid-template-columns: 1fr; }
+    .crew { grid-template-columns: repeat(2, 1fr); }
+    header { flex-direction: column; align-items: flex-start; }
+    .gate { grid-column: 1 / -1; }
+    .big { font-size: 24px; }
+  }
 </style>
 </head>
 <body>
-<div class='desk'>
+<div class="desk">
   <header>
-    <div class='brand'>
-      <div class='mark'>G</div>
-      <div>GATSBY DESK<small>Path A live feed</small></div>
+    <div class="brand">
+      <div class="mark">G</div>
+      <div>GATSBY DESK<small>Path A live feed / listed names only</small></div>
     </div>
-    <div class='live'>
-      <span class='pill'><span class='dot'></span>LIVE</span>
-      <span id='clock'>--:--:-- PT</span>
+    <div class="live">
+      <span class="pill"><span class="dot"></span>LIVE</span>
+      <span id="clock">--:--:-- PT</span>
+      <span id="sessionTag">SESSION A-001</span>
     </div>
   </header>
-  <section class='kpis'>
-    <div class='card'>
-      <div class='label'>Balance</div>
-      <div class='big' id='bal'>--</div>
-      <div class='sub' id='balSub'>cash / buying power</div>
+
+  <section class="kpis">
+    <div class="card">
+      <div class="label">Balance / Agentic</div>
+      <div class="big" id="bal">--</div>
+      <div class="sub" id="balSub">cash / buying power</div>
     </div>
-    <div class='card'>
-      <div class='label'>P/L</div>
-      <div class='big' id='pnl'>--</div>
-      <div class='sub' id='pnlSub'>start cash</div>
+    <div class="card">
+      <div class="label">Session P&L</div>
+      <div class="big" id="pnl">--</div>
+      <div class="sub" id="pnlSub">start cash</div>
     </div>
-    <div class='card'>
-      <div class='label'>SOL mark</div>
-      <div class='big' id='mark'>--</div>
-      <div class='sub' id='book'>RH bid / ask</div>
+    <div class="card">
+      <div class="label">Mission clock</div>
+      <div class="big" id="mission">00:00:00</div>
+      <div class="sub" id="missionSub">flatten</div>
     </div>
-    <div class='card'>
-      <div class='label'>Mission timer</div>
-      <div class='big' id='mission'>00:00:00</div>
-      <div class='sub' id='stamp'>flatten</div>
-    </div>
-    <div class='card gate'>
-      <div class='label'>Order / gate</div>
-      <div class='big' id='gate'>--</div>
-      <div class='sub' id='order'>waiting for feed</div>
+    <div class="card gate">
+      <div class="label">Approval gate / Palermo</div>
+      <div class="big" id="gate">waiting for feed</div>
+      <div class="bars" id="bars"></div>
+      <div class="sub" id="order">waiting for feed</div>
     </div>
   </section>
-  <div class='card log-card'>
-    <div class='label'>Log</div>
-    <div class='log' id='log'></div>
-  </div>
-  <p class='meta' id='meta'>Polling same-origin desk.json every 60s. SOL last from Binance every 15s.</p>
+
+  <section class="grid">
+    <div class="card">
+      <div class="label">Balance history / $ / session</div>
+      <div class="chart">
+        <svg id="spark" viewBox="0 0 400 150" preserveAspectRatio="none"></svg>
+      </div>
+      <div class="sub" id="sparkNote">Flat until fill. Red pin = working order reserved.</div>
+    </div>
+    <div class="card">
+      <div class="label">Activity log</div>
+      <div class="log" id="log"></div>
+    </div>
+  </section>
+
+  <section class="mid">
+    <div class="card">
+      <div class="label">A-001 / SOL-USD strike landscape</div>
+      <canvas id="ridge"></canvas>
+      <div class="stats">
+        <div class="chip"><b id="chipMark">--</b>RH mark</div>
+        <div class="chip"><b id="chipLimit">--</b>limit</div>
+        <div class="chip"><b id="chipInv">--</b>invalidation</div>
+        <div class="chip"><b id="chipRev">--</b>review</div>
+      </div>
+      <div class="sub" id="binanceLast">Binance last --</div>
+    </div>
+    <div class="card">
+      <div class="label">Handoff chord / 10 roles</div>
+      <canvas id="chord"></canvas>
+      <div class="stats">
+        <div class="chip"><b id="chipPasses">8</b>passes</div>
+        <div class="chip"><b id="chipRejected">4</b>rejected</div>
+        <div class="chip"><b id="chipLive">1</b>live order</div>
+        <div class="chip"><b id="chipGateRole">PALERMO</b>gate</div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="label">Flow / listed venue only</div>
+      <div class="flow">
+        <div class="node" style="left:8%;top:40%;width:54px;height:54px;background:#c43c2c">VETO</div>
+        <div class="node" style="left:38%;top:28%;width:70px;height:70px;background:#2b5aa8">SCAN</div>
+        <div class="node" style="left:62%;top:42%;width:48px;height:48px;background:#c47a12">HOLD</div>
+        <div class="node" style="left:78%;top:22%;width:64px;height:64px;background:#1f8a4c">A-001</div>
+      </div>
+      <div class="sub" style="margin-top:8px">TOKYO scan - PALERMO veto/clear - STOCKHOLM size - ASTRA preview/place - HELSINKI ledger - BERLIN exits. Confirm in Grok, not here.</div>
+    </div>
+  </section>
+
+  <section class="crew" id="crew">
+    <div class="agent" data-role="TOKYO"><div class="face" style="background:#e6a317">TK</div><strong>TOKYO</strong><span>scanner</span></div>
+    <div class="agent" data-role="PALERMO"><div class="face" style="background:#c43c2c">PA</div><strong>PALERMO</strong><span>vetoes</span></div>
+    <div class="agent" data-role="DENVER"><div class="face" style="background:#5b7c3a">DV</div><strong>DENVER</strong><span>signals</span></div>
+    <div class="agent" data-role="STOCKHOLM"><div class="face" style="background:#2b5aa8">ST</div><strong>STOCKHOLM</strong><span>liquidity</span></div>
+    <div class="agent" data-role="PROFESSOR"><div class="face" style="background:#111">PR</div><strong>PROFESSOR</strong><span>router</span></div>
+    <div class="agent" data-role="RIO"><div class="face" style="background:#6b4ea1">RI</div><strong>RIO</strong><span>charts</span></div>
+    <div class="agent" data-role="HELSINKI"><div class="face" style="background:#3d3d3d">HE</div><strong>HELSINKI</strong><span>ledger</span></div>
+    <div class="agent" data-role="NAIROBI"><div class="face" style="background:#b86b2a">NA</div><strong>NAIROBI</strong><span>briefs</span></div>
+    <div class="agent" data-role="BERLIN"><div class="face" style="background:#8a2e2e">BE</div><strong>BERLIN</strong><span>conditions</span></div>
+    <div class="agent" data-role="LISBON"><div class="face" style="background:#2f6f6a">LI</div><strong>LISBON</strong><span>recheck</span></div>
+  </section>
+
+  <footer>
+    <span id="footLeft">A-001 waiting</span>
+    <span id="meta">Polling ./desk.json every 30s. No Robinhood calls from this page.</span>
+  </footer>
 </div>
 <script>
 var FALLBACK = 'https://raw.githubusercontent.com/lxrdgatsby/gatsby-desk/main/desk.json';
 var START = Date.parse('2026-09-07T02:44:16Z');
+var CREW = ['TOKYO','PALERMO','DENVER','STOCKHOLM','PROFESSOR','RIO','HELSINKI','NAIROBI','BERLIN','LISBON'];
 var snap = null;
-var liveMark = null;
+var binanceLast = null;
+var extraLog = [];
+var equityHist = [];
+var lastMode = '';
 
 function money(n) {
-  return '$' + Number(n).toFixed(2);
+  var x = Number(n);
+  if (!isFinite(x)) return '--';
+  return '$' + x.toFixed(2);
 }
 
 function clock() {
@@ -135,7 +265,8 @@ function clock() {
     timeZone: 'America/Los_Angeles',
     hour12: false
   }) + ' PT';
-  var total = Math.max(0, Math.floor((Date.now() - START) / 1000));
+  var start = snap && snap.session_start ? Date.parse(snap.session_start) : START;
+  var total = Math.max(0, Math.floor((Date.now() - start) / 1000));
   var h = String(Math.floor(total / 3600)).padStart(2, '0');
   var m = String(Math.floor((total % 3600) / 60)).padStart(2, '0');
   var s = String(total % 60).padStart(2, '0');
@@ -146,30 +277,220 @@ function isDesk(d) {
   return d && typeof d === 'object' && d.order && d.sol;
 }
 
+function modeOf(d) {
+  var o = d.order || {};
+  var filled = Number(o.filled) > 0;
+  var state = String(o.state || '').toLowerCase();
+  var gate = String(d.gate || '').toUpperCase();
+  if (gate.indexOf('FLAT') >= 0 || state === 'flatten' || state === 'flattened') return 'flat';
+  if (gate.indexOf('DEAD') >= 0 || state === 'cancelled' || state === 'canceled' || state === 'rejected' || state === 'expired') return 'dead';
+  if (filled || state === 'filled' || gate.indexOf('FILLED') >= 0) return 'filled';
+  if (state === 'closed' && filled) return 'filled';
+  if (state === 'closed') return 'dead';
+  return 'resting';
+}
+
+function hotRole(mode) {
+  if (mode === 'filled') return 'HELSINKI';
+  if (mode === 'dead' || mode === 'flat') return 'BERLIN';
+  return 'PALERMO';
+}
+
+function gateText(d, mode) {
+  if (mode === 'filled') return 'FILLED';
+  if (mode === 'dead') return 'DEAD';
+  if (mode === 'flat') return 'FLAT';
+  return d.gate || 'A-001 RESTING';
+}
+
+function ptNow() {
+  return new Date().toLocaleTimeString('en-US', {
+    timeZone: 'America/Los_Angeles',
+    hour12: false,
+    hour: '2-digit',
+    minute: '2-digit'
+  });
+}
+
+function parseLog(line) {
+  var m = String(line).match(/^(\d{1,2}:\d{2})\s+([A-Z]{3,5})\s+(.*)$/);
+  if (m) return { t: m[1], role: m[2], text: m[3] };
+  return { t: '', role: '', text: String(line) };
+}
+
+function setBars(nOn) {
+  var el = document.getElementById('bars');
+  el.textContent = '';
+  var i;
+  for (i = 0; i < 8; i++) {
+    var b = document.createElement('i');
+    if (i < nOn) b.className = 'on';
+    el.appendChild(b);
+  }
+}
+
+function drawSpark(d, mode) {
+  var svg = document.getElementById('spark');
+  var start = Number(d.start_cash);
+  var bal = Number(d.balance);
+  if (!equityHist.length) {
+    equityHist = [start, start, start, start, start, start, start];
+  }
+  if (mode === 'filled' || mode === 'flat') {
+    if (equityHist[equityHist.length - 1] !== bal) equityHist.push(bal);
+  }
+  if (equityHist.length > 24) equityHist = equityHist.slice(-24);
+  var pts = equityHist.slice();
+  var min = Math.min.apply(null, pts.concat([start - 5]));
+  var max = Math.max.apply(null, pts.concat([start + 5]));
+  var span = max - min || 1;
+  var w = 400, h = 150;
+  var coords = pts.map(function (v, i) {
+    var x = 10 + (i / Math.max(pts.length - 1, 1)) * (w - 20);
+    var y = 20 + (1 - (v - min) / span) * (h - 40);
+    return x.toFixed(1) + ',' + y.toFixed(1);
+  });
+  var last = coords[coords.length - 1].split(',');
+  var pin = (mode === 'resting')
+    ? '<circle cx="' + last[0] + '" cy="' + last[1] + '" r="5" fill="#c43c2c"></circle>'
+    : '<circle cx="' + last[0] + '" cy="' + last[1] + '" r="5" fill="#3adf7a"></circle>';
+  svg.innerHTML = '<polyline fill="none" stroke="#3adf7a" stroke-width="3" points="' + coords.join(' ') + '"></polyline>' + pin;
+  var reserved = Number(d.start_cash) - Number(d.buying_power);
+  document.getElementById('sparkNote').textContent = mode === 'resting'
+    ? 'Flat $' + Number(d.start_cash).toFixed(0) + ' until fill. Red pin = working order reserved $' + reserved.toFixed(0) + '.'
+    : 'Equity stepped to ' + money(bal) + '.';
+}
+
+function drawRidge(d) {
+  var canvas = document.getElementById('ridge');
+  var ctx = canvas.getContext('2d');
+  canvas.width = canvas.clientWidth * 2;
+  canvas.height = canvas.clientHeight * 2;
+  var w = canvas.width, h = canvas.height;
+  ctx.clearRect(0, 0, w, h);
+  var o = d.order;
+  var lo = Number(o.invalidation);
+  var hi = Number(o.review);
+  var lim = Number(o.limit);
+  var mark = Number(d.sol.mark);
+  function xAt(p) {
+    return ((p - lo) / (hi - lo || 1)) * w;
+  }
+  var i, x, y;
+  for (i = 0; i < 28; i++) {
+    ctx.beginPath();
+    for (x = 0; x <= w; x += 8) {
+      y = h * 0.55 + Math.sin(x / 90 + i / 4) * 18 + (i - 14) * 4;
+      if (x) ctx.lineTo(x, y); else ctx.moveTo(x, y);
+    }
+    ctx.strokeStyle = i === 14 ? '#3adf7a' : 'rgba(238,242,246,.08)';
+    ctx.lineWidth = i === 14 ? 3 : 1;
+    ctx.stroke();
+  }
+  var limX = xAt(lim);
+  ctx.fillStyle = '#c43c2c';
+  ctx.fillRect(limX, 20, 2, h - 40);
+  var markX = xAt(mark);
+  ctx.fillStyle = '#e7c37a';
+  ctx.beginPath();
+  ctx.arc(markX, h * 0.42, 6, 0, Math.PI * 2);
+  ctx.fill();
+}
+
+function drawChord(hot) {
+  var canvas = document.getElementById('chord');
+  var ctx = canvas.getContext('2d');
+  canvas.width = canvas.clientWidth * 2;
+  canvas.height = canvas.clientHeight * 2;
+  var w = canvas.width, h = canvas.height, cx = w / 2, cy = h / 2, r = Math.min(w, h) * 0.36;
+  var n = 10, i, j, a, b;
+  var hotIdx = CREW.indexOf(hot);
+  if (hotIdx < 0) hotIdx = 1;
+  ctx.clearRect(0, 0, w, h);
+  for (i = 0; i < n; i++) {
+    for (j = i + 1; j < n; j++) {
+      if ((i + j) % 3) continue;
+      a = (Math.PI * 2 * i) / n - Math.PI / 2;
+      b = (Math.PI * 2 * j) / n - Math.PI / 2;
+      ctx.beginPath();
+      ctx.moveTo(cx + Math.cos(a) * r, cy + Math.sin(a) * r);
+      ctx.quadraticCurveTo(cx, cy, cx + Math.cos(b) * r, cy + Math.sin(b) * r);
+      ctx.strokeStyle = 'rgba(122,167,255,.28)';
+      ctx.stroke();
+    }
+  }
+  for (i = 0; i < n; i++) {
+    a = (Math.PI * 2 * i) / n - Math.PI / 2;
+    ctx.beginPath();
+    ctx.arc(cx + Math.cos(a) * r, cy + Math.sin(a) * r, 8, 0, Math.PI * 2);
+    ctx.fillStyle = i === hotIdx ? '#3adf7a' : '#e7c37a';
+    if (i !== hotIdx) ctx.fillStyle = '#2a303a';
+    if (i === 1 && hotIdx !== 1) ctx.fillStyle = '#5b7c3a';
+    ctx.fill();
+  }
+}
+
 function paint(d) {
   snap = d;
+  var mode = modeOf(d);
+  var hot = hotRole(mode);
+  var o = d.order;
+  document.getElementById('sessionTag').textContent = 'SESSION ' + (d.session || 'A-001');
   document.getElementById('bal').textContent = money(d.balance);
-  document.getElementById('balSub').textContent = 'CASH ' + money(d.cash) + ' / BP ' + money(d.buying_power);
+  document.getElementById('balSub').textContent = 'CASH ' + money(d.cash) + ' / BP ' + money(d.buying_power) + ' reserved against A-001';
   var pnl = Number(d.pnl);
   var pnlEl = document.getElementById('pnl');
   pnlEl.textContent = (pnl >= 0 ? '+$' : '-$') + Math.abs(pnl).toFixed(2);
   pnlEl.className = 'big ' + (pnl >= 0 ? 'pos' : 'neg');
-  document.getElementById('pnlSub').textContent = 'start ' + money(d.start_cash);
-  var mark = liveMark != null ? liveMark : d.sol.mark;
-  document.getElementById('mark').textContent = money(mark);
-  document.getElementById('book').textContent = 'RH bid ' + Number(d.sol.bid).toFixed(2) + ' / ask ' + Number(d.sol.ask).toFixed(2);
-  document.getElementById('stamp').textContent = 'flatten ' + String(d.flatten_note);
-  document.getElementById('gate').textContent = d.gate;
-  var o = d.order;
-  document.getElementById('order').textContent = o.id_short + ' ' + o.symbol + ' ' + o.side + ' ' + o.type + ' ' + o.qty + ' @ ' + o.limit + ' filled ' + o.filled + ' ' + o.state;
+  document.getElementById('pnlSub').textContent = (mode === 'resting' ? 'No fill yet / start ' : 'start ') + money(d.start_cash);
+  document.getElementById('missionSub').textContent = 'Live since session start / flatten ' + String(d.flatten_note);
+  var gtxt = gateText(d, mode);
+  if (mode === 'resting') gtxt = String(d.gate || 'A-001 RESTING') + ' / LIMIT LIVE';
+  document.getElementById('gate').textContent = gtxt;
+  setBars(mode === 'filled' ? 8 : mode === 'resting' ? 5 : 2);
+  document.getElementById('order').textContent = o.symbol + ' ' + o.side + ' ' + o.type + ' ' + o.qty + ' @ ' + o.limit + ' filled ' + o.filled + ' ' + o.state;
+  document.getElementById('chipMark').textContent = money(d.sol.mark);
+  document.getElementById('chipLimit').textContent = money(o.limit);
+  document.getElementById('chipInv').textContent = money(o.invalidation);
+  document.getElementById('chipRev').textContent = money(o.review);
+  document.getElementById('binanceLast').textContent = binanceLast != null
+    ? 'Binance last ' + money(binanceLast) + ' (display only; RH book is the gate)'
+    : 'Binance last --';
+  document.getElementById('chipGateRole').textContent = hot;
+  document.getElementById('chipLive').textContent = mode === 'resting' ? '1' : '0';
+  document.getElementById('footLeft').textContent = (d.session || 'A-001') + ' ' + o.id_short + ' / ' + o.qty + ' SOL limit ' + o.limit + ' / ' + o.state;
+  document.getElementById('meta').textContent = 'session ' + d.session + '  stamped ' + d.stamped_at;
+
+  if (mode !== lastMode) {
+    if (mode === 'filled') extraLog.push(ptNow() + ' HELS FILLED ' + o.qty + ' ' + o.symbol + ' @ ' + o.limit);
+    if (mode === 'dead') extraLog.push(ptNow() + ' BERL DEAD order ' + o.id_short);
+    if (mode === 'flat') extraLog.push(ptNow() + ' BERL FLAT flatten ' + d.flatten_note);
+    lastMode = mode;
+  }
+
+  var lines = (d.log || []).concat(extraLog);
   var logEl = document.getElementById('log');
   logEl.textContent = '';
-  (d.log || []).forEach(function (line) {
+  lines.forEach(function (line) {
+    var p = parseLog(line);
     var row = document.createElement('div');
-    row.textContent = line;
+    row.className = 'log-row';
+    var t = document.createElement('span'); t.textContent = p.t;
+    var r = document.createElement('span'); r.className = 'role'; r.textContent = p.role;
+    var x = document.createElement('span'); x.textContent = p.text;
+    row.appendChild(t); row.appendChild(r); row.appendChild(x);
     logEl.appendChild(row);
   });
-  document.getElementById('meta').textContent = 'session ' + d.session + '  stamped ' + d.stamped_at;
+
+  var agents = document.querySelectorAll('#crew .agent');
+  agents.forEach(function (el) {
+    if (el.getAttribute('data-role') === hot) el.classList.add('hot');
+    else el.classList.remove('hot');
+  });
+
+  drawSpark(d, mode);
+  drawRidge(d);
+  drawChord(hot);
 }
 
 function loadJson(url) {
@@ -190,6 +511,7 @@ function loadDesk() {
     .then(paint)
     .catch(function (e) {
       document.getElementById('order').textContent = String(e && e.message ? e.message : e);
+      document.getElementById('gate').textContent = String(e && e.message ? e.message : e);
     });
 }
 
@@ -202,9 +524,11 @@ function loadSol() {
     .then(function (j) {
       var n = Number(j.price);
       if (!isFinite(n)) return;
-      liveMark = n;
-      if (snap) paint(snap);
-      else document.getElementById('mark').textContent = money(n);
+      binanceLast = n;
+      if (snap) {
+        document.getElementById('binanceLast').textContent =
+          'Binance last ' + money(n) + ' (display only; RH book is the gate)';
+      }
     })
     .catch(function () {});
 }
@@ -213,8 +537,14 @@ clock();
 setInterval(clock, 1000);
 loadDesk();
 loadSol();
-setInterval(loadDesk, 60000);
+setInterval(loadDesk, 30000);
 setInterval(loadSol, 15000);
+window.addEventListener('resize', function () {
+  if (snap) {
+    drawRidge(snap);
+    drawChord(hotRole(modeOf(snap)));
+  }
+});
 </script>
 </body>
 </html>
