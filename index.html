@@ -1,94 +1,220 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang='en'>
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-<meta name="apple-mobile-web-app-capable" content="yes" />
-<meta name="mobile-web-app-capable" content="yes" />
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-<meta name="apple-mobile-web-app-title" content="Gatsby Desk" />
-<meta name="theme-color" content="#07080a" />
+<meta charset='UTF-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1, viewport-fit=cover'>
+<meta name='apple-mobile-web-app-capable' content='yes'>
+<meta name='mobile-web-app-capable' content='yes'>
+<meta name='apple-mobile-web-app-status-bar-style' content='black-translucent'>
+<meta name='apple-mobile-web-app-title' content='Gatsby Desk'>
+<meta name='theme-color' content='#07080a'>
 <title>GATSBY DESK</title>
 <style>
-  :root { --bg:#07080a; --card:#14171d; --ink:#eef2f6; --muted:#8b93a0; --line:#242a34; --green:#3adf7a; --red:#ff6b57; --gold:#e7c37a; }
-  * { box-sizing:border-box; margin:0; padding:0; }
-  body { font-family:-apple-system,system-ui,sans-serif; background:var(--bg); color:var(--ink); min-height:100dvh; padding:calc(12px + env(safe-area-inset-top)) 12px 20px; }
-  .desk { max-width:720px; margin:0 auto; }
-  header { display:flex; justify-content:space-between; align-items:center; margin-bottom:12px; }
-  .mark { width:34px; height:34px; border-radius:10px; background:var(--gold); color:#111; display:grid; place-items:center; font-weight:700; }
-  .brand { display:flex; gap:10px; align-items:center; font-weight:700; }
-  .brand small { display:block; color:var(--muted); font-size:11px; font-weight:500; }
-  .pill { background:#163524; color:var(--green); border-radius:99px; padding:6px 10px; font-size:11px; }
-  .kpis { display:grid; grid-template-columns:1fr 1fr; gap:8px; }
-  .card { background:var(--card); border:1px solid var(--line); border-radius:16px; padding:13px; }
-  .label { font-size:10px; color:var(--muted); letter-spacing:.08em; text-transform:uppercase; }
-  .big { font-size:24px; font-weight:700; margin-top:6px; }
-  .sub { font-size:11px; color:var(--muted); margin-top:5px; }
-  .gate { grid-column:1/-1; border-color:#1e3c2b; }
-  .log { margin-top:8px; font-size:11px; }
-  .log div { padding:7px 0; border-bottom:1px solid #1d232c; }
-  .meta { margin-top:10px; color:var(--muted); font-size:11px; }
+  :root {
+    --bg: #07080a;
+    --card: #14171d;
+    --ink: #eef2f6;
+    --muted: #8b93a0;
+    --line: #242a34;
+    --green: #3adf7a;
+    --red: #ff6b57;
+    --gold: #e7c37a;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { background: var(--bg); color: var(--ink); }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+    min-height: 100dvh;
+    padding: calc(14px + env(safe-area-inset-top)) 14px calc(22px + env(safe-area-inset-bottom));
+  }
+  .desk { max-width: 720px; margin: 0 auto; }
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 14px;
+  }
+  .brand { display: flex; gap: 10px; align-items: center; font-weight: 700; letter-spacing: 0.04em; }
+  .mark {
+    width: 34px; height: 34px; border-radius: 10px;
+    background: var(--gold); color: #111;
+    display: grid; place-items: center; font-weight: 800;
+  }
+  .brand small { display: block; color: var(--muted); font-size: 11px; font-weight: 500; letter-spacing: 0; }
+  .live { text-align: right; }
+  .pill {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: #163524; color: var(--green);
+    border-radius: 99px; padding: 6px 10px; font-size: 11px; font-weight: 600;
+  }
+  .dot {
+    width: 7px; height: 7px; border-radius: 50%; background: var(--green);
+    animation: pulse 1.6s infinite;
+  }
+  @keyframes pulse { 50% { opacity: 0.35; } }
+  #clock { display: block; margin-top: 6px; font-variant-numeric: tabular-nums; font-size: 12px; color: var(--muted); }
+  .kpis { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .card {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 13px;
+  }
+  .label { font-size: 10px; color: var(--muted); letter-spacing: 0.08em; text-transform: uppercase; }
+  .big { font-size: 24px; font-weight: 700; margin-top: 6px; font-variant-numeric: tabular-nums; }
+  .sub { font-size: 11px; color: var(--muted); margin-top: 5px; }
+  .pos { color: var(--green); }
+  .neg { color: var(--red); }
+  .gate { grid-column: 1 / -1; border-color: #1e3c2b; }
+  .log-card { margin-top: 8px; }
+  .log { margin-top: 8px; font-size: 11px; font-variant-numeric: tabular-nums; }
+  .log div { padding: 7px 0; border-bottom: 1px solid #1d232c; }
+  .log div:last-child { border-bottom: 0; }
+  .meta { margin-top: 10px; color: var(--muted); font-size: 11px; }
 </style>
 </head>
 <body>
-<div class="desk">
+<div class='desk'>
   <header>
-    <div class="brand"><div class="mark">G</div><div>GATSBY DESK<small>Path A live feed</small></div></div>
-    <span class="pill"><span id="clock">--</span></span>
+    <div class='brand'>
+      <div class='mark'>G</div>
+      <div>GATSBY DESK<small>Path A live feed</small></div>
+    </div>
+    <div class='live'>
+      <span class='pill'><span class='dot'></span>LIVE</span>
+      <span id='clock'>--:--:-- PT</span>
+    </div>
   </header>
-  <section class="kpis">
-    <div class="card"><div class="label">Balance</div><div class="big" id="bal">$50.00</div><div class="sub" id="balSub">loading feed</div></div>
-    <div class="card"><div class="label">P and L</div><div class="big" id="pnl">$0.00</div><div class="sub">start $50</div></div>
-    <div class="card"><div class="label">SOL mark</div><div class="big" id="mark">--</div><div class="sub" id="book">bid / ask</div></div>
-    <div class="card"><div class="label">Mission</div><div class="big" id="mission">--</div><div class="sub" id="stamp">stamp</div></div>
-    <div class="card gate"><div class="label">Order / Palermo</div><div class="big" id="gate">A-001</div><div class="sub" id="order">waiting for feed</div></div>
+  <section class='kpis'>
+    <div class='card'>
+      <div class='label'>Balance</div>
+      <div class='big' id='bal'>--</div>
+      <div class='sub' id='balSub'>cash / buying power</div>
+    </div>
+    <div class='card'>
+      <div class='label'>P/L</div>
+      <div class='big' id='pnl'>--</div>
+      <div class='sub' id='pnlSub'>start cash</div>
+    </div>
+    <div class='card'>
+      <div class='label'>SOL mark</div>
+      <div class='big' id='mark'>--</div>
+      <div class='sub' id='book'>RH bid / ask</div>
+    </div>
+    <div class='card'>
+      <div class='label'>Mission timer</div>
+      <div class='big' id='mission'>00:00:00</div>
+      <div class='sub' id='stamp'>flatten</div>
+    </div>
+    <div class='card gate'>
+      <div class='label'>Order / gate</div>
+      <div class='big' id='gate'>--</div>
+      <div class='sub' id='order'>waiting for feed</div>
+    </div>
   </section>
-  <div class="card" style="margin-top:8px"><div class="label">Log</div><div class="log" id="log"></div></div>
-  <p class="meta" id="meta">If numbers never move, this host blocked JS. Use GitHub Pages.</p>
+  <div class='card log-card'>
+    <div class='label'>Log</div>
+    <div class='log' id='log'></div>
+  </div>
+  <p class='meta' id='meta'>Polling same-origin desk.json every 60s. SOL last from Binance every 15s.</p>
 </div>
 <script>
-const DATA = 'https://raw.githubusercontent.com/lxrdgatsby/gatsby-desk/main/desk.json';
-const START = Date.parse('2026-09-07T02:44:16Z');
-let snap = null;
+var FALLBACK = 'https://raw.githubusercontent.com/lxrdgatsby/gatsby-desk/main/desk.json';
+var START = Date.parse('2026-09-07T02:44:16Z');
+var snap = null;
+var liveMark = null;
+
+function money(n) {
+  return '$' + Number(n).toFixed(2);
+}
+
 function clock() {
   var now = new Date();
-  document.getElementById('clock').textContent = now.toLocaleTimeString('en-US',{timeZone:'America/Los_Angeles',hour12:false}) + ' PT';
-  var mins = Math.max(0, Math.floor((Date.now()-START)/60000));
-  document.getElementById('mission').textContent = String(Math.floor(mins/60)).padStart(2,'0') + ':' + String(mins%60).padStart(2,'0');
+  document.getElementById('clock').textContent = now.toLocaleTimeString('en-US', {
+    timeZone: 'America/Los_Angeles',
+    hour12: false
+  }) + ' PT';
+  var total = Math.max(0, Math.floor((Date.now() - START) / 1000));
+  var h = String(Math.floor(total / 3600)).padStart(2, '0');
+  var m = String(Math.floor((total % 3600) / 60)).padStart(2, '0');
+  var s = String(total % 60).padStart(2, '0');
+  document.getElementById('mission').textContent = h + ':' + m + ':' + s;
 }
-clock(); setInterval(clock, 1000);
-function paint(d, liveMark) {
+
+function isDesk(d) {
+  return d && typeof d === 'object' && d.order && d.sol;
+}
+
+function paint(d) {
   snap = d;
-  document.getElementById('bal').textContent = '$' + Number(d.balance).toFixed(2);
-  document.getElementById('balSub').textContent = 'CASH $' + Number(d.cash).toFixed(2) + ' / BP $' + Number(d.buying_power).toFixed(2);
+  document.getElementById('bal').textContent = money(d.balance);
+  document.getElementById('balSub').textContent = 'CASH ' + money(d.cash) + ' / BP ' + money(d.buying_power);
   var pnl = Number(d.pnl);
-  document.getElementById('pnl').textContent = (pnl>=0?'+$':'-$') + Math.abs(pnl).toFixed(2);
+  var pnlEl = document.getElementById('pnl');
+  pnlEl.textContent = (pnl >= 0 ? '+$' : '-$') + Math.abs(pnl).toFixed(2);
+  pnlEl.className = 'big ' + (pnl >= 0 ? 'pos' : 'neg');
+  document.getElementById('pnlSub').textContent = 'start ' + money(d.start_cash);
   var mark = liveMark != null ? liveMark : d.sol.mark;
-  document.getElementById('mark').textContent = '$' + Number(mark).toFixed(2);
-  document.getElementById('book').textContent = 'bid ' + Number(d.sol.bid).toFixed(2) + ' / ask ' + Number(d.sol.ask).toFixed(2);
-  document.getElementById('stamp').textContent = String(d.stamped_at);
+  document.getElementById('mark').textContent = money(mark);
+  document.getElementById('book').textContent = 'RH bid ' + Number(d.sol.bid).toFixed(2) + ' / ask ' + Number(d.sol.ask).toFixed(2);
+  document.getElementById('stamp').textContent = 'flatten ' + String(d.flatten_note);
   document.getElementById('gate').textContent = d.gate;
   var o = d.order;
-  document.getElementById('order').textContent = o.symbol + ' ' + o.side + ' ' + o.qty + ' @ ' + o.limit + ' filled ' + o.filled + ' ' + o.state;
-  document.getElementById('log').innerHTML = (d.log||[]).map(function(x){return '<div>'+x+'</div>';}).join('');
-  document.getElementById('meta').textContent = 'last ' + d.stamped_at;
+  document.getElementById('order').textContent = o.id_short + ' ' + o.symbol + ' ' + o.side + ' ' + o.type + ' ' + o.qty + ' @ ' + o.limit + ' filled ' + o.filled + ' ' + o.state;
+  var logEl = document.getElementById('log');
+  logEl.textContent = '';
+  (d.log || []).forEach(function (line) {
+    var row = document.createElement('div');
+    row.textContent = line;
+    logEl.appendChild(row);
+  });
+  document.getElementById('meta').textContent = 'session ' + d.session + '  stamped ' + d.stamped_at;
 }
+
+function loadJson(url) {
+  return fetch(url, { cache: 'no-store' }).then(function (r) {
+    if (!r.ok) throw new Error(url + ' ' + r.status);
+    return r.json().then(function (d) {
+      if (!isDesk(d)) throw new Error(url + ' not desk.json');
+      return d;
+    });
+  });
+}
+
 function loadDesk() {
-  fetch(DATA + '?t=' + Date.now(), {cache:'no-store'})
-    .then(function(r){ if(!r.ok) throw new Error('desk.json '+r.status); return r.json(); })
+  var local = './desk.json?t=' + Date.now();
+  var remote = FALLBACK + '?t=' + Date.now();
+  loadJson(local)
+    .catch(function () { return loadJson(remote); })
     .then(paint)
-    .catch(function(e){ document.getElementById('order').textContent = String(e); });
+    .catch(function (e) {
+      document.getElementById('order').textContent = String(e && e.message ? e.message : e);
+    });
 }
+
 function loadSol() {
   fetch('https://api.binance.com/api/v3/ticker/price?symbol=SOLUSDT')
-    .then(function(r){ return r.json(); })
-    .then(function(j){ if(snap) paint(snap, Number(j.price)); })
-    .catch(function(){});
+    .then(function (r) {
+      if (!r.ok) throw new Error('binance ' + r.status);
+      return r.json();
+    })
+    .then(function (j) {
+      var n = Number(j.price);
+      if (!isFinite(n)) return;
+      liveMark = n;
+      if (snap) paint(snap);
+      else document.getElementById('mark').textContent = money(n);
+    })
+    .catch(function () {});
 }
+
+clock();
+setInterval(clock, 1000);
 loadDesk();
+loadSol();
 setInterval(loadDesk, 60000);
 setInterval(loadSol, 15000);
-loadSol();
 </script>
 </body>
 </html>
