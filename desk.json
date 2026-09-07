@@ -1,12 +1,12 @@
 {
-  "stamped_at": "2026-09-06T21:25:00-07:00",
+  "stamped_at": "2026-09-06T21:25:45-07:00",
   "session": "B-001",
   "balance": 49.65,
   "cash": 49.65,
   "buying_power": 44.65,
   "pnl": -0.35,
   "start_cash": 50,
-  "session_start": "2026-09-07T02:44:16Z",
+  "session_start": "2026-09-07T04:21:31Z",
   "flatten_note": "08:00 PT Mon",
   "order": {
     "id_short": "6a9e3bcb",
@@ -21,22 +21,21 @@
     "review": 0.222
   },
   "sol": {
-    "mark": 0.21538,
-    "bid": 0.21328,
-    "ask": 0.21749
+    "mark": 0.21508,
+    "bid": 0.21298,
+    "ask": 0.21719
   },
   "wif": {
-    "mark": 0.21538,
-    "bid": 0.21328,
-    "ask": 0.21749
+    "mark": 0.21508,
+    "bid": 0.21298,
+    "ask": 0.21719
   },
   "gate": "B-001 RESTING",
   "log": [
     "21:10 A-001 FILL 0.14084 SOL @ 106.49",
     "21:16 SELL FILL 0.14084 SOL @ 104.08 credit 14.65",
     "21:16 HELS Flat. Cash 49.65. Ticket -0.35",
-    "21:19 TOKY Scan listed. LINK +7% chase VETO",
     "21:21 ASTR B-001 23.2558 WIF @ 0.215 $5",
-    "21:25 HELS Mark 0.2154. Bid 0.2133 / ask 0.2175. Fill 0"
+    "21:25 HELS WIF 0.2151. Bid 0.2130 / ask 0.2172. Fill 0"
   ]
 }
