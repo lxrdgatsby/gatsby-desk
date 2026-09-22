@@ -1,5 +1,5 @@
 {
-  "stamped_at": "2026-09-22T14:03:30-07:00",
+  "stamped_at": "2026-09-22T15:16:00-07:00",
   "session": "A-001",
   "balance": 49.65,
   "cash": 49.65,
@@ -21,17 +21,17 @@
     "review": 110.5
   },
   "sol": {
-    "mark": 118.20,
-    "bid": 117.09,
-    "ask": 119.31
+    "mark": 117.76,
+    "bid": 116.66,
+    "ask": 118.86
   },
   "gate": "FILLED",
   "log": [
-    "05:43 HELS refresh. Portfolio flat. Cash 49.65. SOL mark 117.24. Gate FILLED. PnL -0.35",
     "09:31 HELS refresh. Portfolio flat. Cash 49.65. SOL mark 116.97. Gate FILLED. PnL -0.35",
     "11:22 HELS refresh. Portfolio flat. Cash 49.65. SOL mark 118.28. Gate FILLED. PnL -0.35",
     "12:07 HELS refresh. Portfolio flat. Cash 49.65. SOL mark 118.45. Gate FILLED. PnL -0.35",
     "13:18 HELS refresh. Portfolio flat. Cash 49.65. SOL mark 117.94. Gate FILLED. PnL -0.35",
-    "14:03 HELS refresh. Portfolio flat. Cash 49.65. SOL mark 118.20. Gate FILLED. PnL -0.35"
+    "14:03 HELS refresh. Portfolio flat. Cash 49.65. SOL mark 118.20. Gate FILLED. PnL -0.35",
+    "15:16 HELS refresh. Portfolio flat. Cash 49.65. SOL mark 117.76. Gate FILLED. PnL -0.35"
   ]
 }
