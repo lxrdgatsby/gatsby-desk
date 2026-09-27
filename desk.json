@@ -1,13 +1,13 @@
 {
-  "stamped_at": "2026-09-26T21:07:15-07:00",
+  "stamped_at": "2026-09-26T22:08:12-07:00",
   "session": "A-001",
-  "balance": 49.65,
-  "cash": 49.65,
-  "buying_power": 49.65,
-  "pnl": -0.35,
+  "balance": 0,
+  "cash": 0,
+  "buying_power": 0,
+  "pnl": -50,
   "start_cash": 50,
   "session_start": "2026-09-07T02:44:16Z",
-  "flatten_note": "A-001 filled then flat. Cash 49.65. No crypto position.",
+  "flatten_note": "A-001 filled then flat. Live book shows 0 cash/0 crypto. Prior desk cash 49.65.",
   "order": {
     "id_short": "6a9e2500",
     "symbol": "SOL",
@@ -21,18 +21,18 @@
     "review": 110.5
   },
   "sol": {
-    "mark": 120.658498415,
-    "bid": 119.5290064,
-    "ask": 121.78799043
+    "mark": 120.47972585,
+    "bid": 119.34238364,
+    "ask": 121.61706806
   },
   "gate": "FILLED",
   "log": [
-    "15:09 HELS refresh. Portfolio flat. Cash 49.65. SOL mark 121.70. Gate FILLED. PnL -0.35",
     "16:09 HELS refresh. Portfolio flat. Cash 49.65. SOL mark 121.47. Gate FILLED. PnL -0.35",
     "17:11 HELS refresh. Portfolio flat. Cash 49.65. SOL mark 121.17. Gate FILLED. PnL -0.35",
     "18:10 HELS refresh. Portfolio flat. Cash 49.65. SOL mark 120.95. Gate FILLED. PnL -0.35",
     "19:07 HELS refresh. Portfolio flat. Cash 49.65. SOL mark 121.42. Gate FILLED. PnL -0.35",
     "20:07 HELS refresh. Portfolio flat. Cash 49.65. SOL mark 121.28. Gate FILLED. PnL -0.35",
-    "21:07 HELS refresh. Portfolio flat. Cash 49.65. SOL mark 120.66. Gate FILLED. PnL -0.35"
+    "21:07 HELS refresh. Portfolio flat. Cash 49.65. SOL mark 120.66. Gate FILLED. PnL -0.35",
+    "22:08 HELS refresh. Live book 0/0. SOL mark 120.48. Gate FILLED. PnL -50"
   ]
 }
