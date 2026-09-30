@@ -1,5 +1,5 @@
 {
-  "stamped_at": "2026-09-30T07:08:14-07:00",
+  "stamped_at": "2026-09-30T08:08:03-07:00",
   "session": "A-001",
   "balance": 0,
   "cash": 0,
@@ -21,19 +21,19 @@
     "review": 110.5
   },
   "sol": {
-    "mark": 120.68397356,
-    "bid": 119.545201,
-    "ask": 121.82274612
+    "mark": 118.707952915,
+    "bid": 117.582,
+    "ask": 119.83390583
   },
   "gate": "FILLED",
   "log": [
-    "00:07 HELS refresh. Live book 0/0. SOL mark 118.07. Gate FILLED. PnL -50",
     "01:07 HELS refresh. Live book 0/0. SOL mark 118.13. Gate FILLED. PnL -50",
     "02:07 HELS refresh. Live book 0/0. SOL mark 118.62. Gate FILLED. PnL -50",
     "03:07 HELS refresh. Live book 0/0. SOL mark 119.36. Gate FILLED. PnL -50",
     "04:07 HELS refresh. Live book 0/0. SOL mark 119.25. Gate FILLED. PnL -50",
     "05:11 HELS refresh. Live book 0/0. SOL mark 119.52. Gate FILLED. PnL -50",
     "06:11 HELS refresh. Live book 0/0. SOL mark 122.51. Gate FILLED. PnL -50",
-    "07:08 HELS refresh. Live book 0/0. SOL mark 120.68. Gate FILLED. PnL -50"
+    "07:08 HELS refresh. Live book 0/0. SOL mark 120.68. Gate FILLED. PnL -50",
+    "08:08 HELS refresh. Live book 0/0. SOL mark 118.71. Gate FILLED. PnL -50"
   ]
 }
