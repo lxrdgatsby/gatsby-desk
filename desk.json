@@ -1,5 +1,5 @@
 {
-  "stamped_at": "2026-10-09T03:08:42-07:00",
+  "stamped_at": "2026-10-09T04:12:37-07:00",
   "session": "A-001",
   "balance": 0,
   "cash": 0,
@@ -8,7 +8,7 @@
   "pnl": -50,
   "start_cash": 50,
   "session_start": "2026-09-07T02:44:16Z",
-  "flatten_note": "A-001 filled then flat. Live book 0 cash / 0 crypto. No open order. Path A read-only. Mark just under review 110.5.",
+  "flatten_note": "A-001 filled then flat. Live book 0 cash / 0 crypto. No open order. Path A read-only. Mark under review 110.5, above invalidation 104.5.",
   "order": {
     "id_short": "6a9e2500",
     "symbol": "SOL",
@@ -22,18 +22,18 @@
     "review": 110.5
   },
   "sol": {
-    "mark": 110.315945205,
-    "bid": 109.2795049,
-    "ask": 111.35238551
+    "mark": 109.648430045,
+    "bid": 108.6066258,
+    "ask": 110.69023429
   },
   "gate": "FILLED",
   "log": [
-    "21:07 HELS refresh. Live book 0/0. SOL mark 110.44. Gate FILLED. PnL -50. Mark just under review 110.5, above invalidation 104.5",
     "22:07 HELS refresh. Live book 0/0. SOL mark 110.06. Gate FILLED. PnL -50. Mark under review 110.5, above invalidation 104.5",
     "23:12 HELS refresh. Live book 0/0. SOL mark 110.43. Gate FILLED. PnL -50. Mark just under review 110.5, above invalidation 104.5",
     "00:09 HELS refresh. Live book 0/0. SOL mark 110.25. Gate FILLED. PnL -50. Mark under review 110.5, above invalidation 104.5",
     "01:09 HELS refresh. Live book 0/0. SOL mark 110.54. Gate FILLED. PnL -50. Mark through review 110.5, above invalidation 104.5",
     "02:08 HELS refresh. Live book 0/0. SOL mark 110.45. Gate FILLED. PnL -50. Mark just under review 110.5, above invalidation 104.5",
-    "03:08 HELS refresh. Live book 0/0. SOL mark 110.32. Gate FILLED. PnL -50. Mark just under review 110.5, above invalidation 104.5"
+    "03:08 HELS refresh. Live book 0/0. SOL mark 110.32. Gate FILLED. PnL -50. Mark just under review 110.5, above invalidation 104.5",
+    "04:12 HELS refresh. Live book 0/0. SOL mark 109.65. Gate FILLED. PnL -50. Mark under review 110.5, above invalidation 104.5"
   ]
 }
