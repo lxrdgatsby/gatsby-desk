@@ -1,5 +1,5 @@
 {
-  "stamped_at": "2026-10-08T22:07:56-07:00",
+  "stamped_at": "2026-10-08T23:12:00-07:00",
   "session": "A-001",
   "balance": 0,
   "cash": 0,
@@ -22,18 +22,18 @@
     "review": 110.5
   },
   "sol": {
-    "mark": 110.06016545,
-    "bid": 109.0196328,
-    "ask": 111.1006981
+    "mark": 110.434322655,
+    "bid": 109.387,
+    "ask": 111.48164531
   },
   "gate": "FILLED",
   "log": [
-    "16:08 HELS refresh. Live book 0/0. SOL mark 110.15. Gate FILLED. PnL -50. Mark just under review 110.5",
     "17:11 HELS refresh. Live book 0/0. SOL mark 109.60. Gate FILLED. PnL -50. Mark under review 110.5, above invalidation 104.5",
     "18:12 HELS refresh. Live book 0/0. SOL mark 108.99. Gate FILLED. PnL -50. Mark under review 110.5, above invalidation 104.5",
     "19:07 HELS refresh. Live book 0/0. SOL mark 109.83. Gate FILLED. PnL -50. Mark under review 110.5, above invalidation 104.5",
     "20:07 HELS refresh. Live book 0/0. SOL mark 109.98. Gate FILLED. PnL -50. Mark under review 110.5, above invalidation 104.5",
     "21:07 HELS refresh. Live book 0/0. SOL mark 110.44. Gate FILLED. PnL -50. Mark just under review 110.5, above invalidation 104.5",
-    "22:07 HELS refresh. Live book 0/0. SOL mark 110.06. Gate FILLED. PnL -50. Mark under review 110.5, above invalidation 104.5"
+    "22:07 HELS refresh. Live book 0/0. SOL mark 110.06. Gate FILLED. PnL -50. Mark under review 110.5, above invalidation 104.5",
+    "23:12 HELS refresh. Live book 0/0. SOL mark 110.43. Gate FILLED. PnL -50. Mark just under review 110.5, above invalidation 104.5"
   ]
 }
