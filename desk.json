@@ -1,5 +1,5 @@
 {
-  "stamped_at": "2026-10-11T17:14:30-07:00",
+  "stamped_at": "2026-10-11T18:10:33-07:00",
   "session": "A-001",
   "balance": 0,
   "cash": 0,
@@ -8,7 +8,7 @@
   "pnl": -50,
   "start_cash": 50,
   "session_start": "2026-09-07T02:44:16Z",
-  "flatten_note": "A-001 filled then flat. Live book 0 cash / 0 crypto. No open order. Path A read-only. Mark 111.12 above review 110.5, above invalidation 104.5.",
+  "flatten_note": "A-001 filled then flat. Live book 0 cash / 0 crypto. No open order. Path A read-only. Mark 111.53 above review 110.5, above invalidation 104.5.",
   "order": {
     "id_short": "6a9e2500",
     "symbol": "SOL",
@@ -22,19 +22,17 @@
     "review": 110.5
   },
   "sol": {
-    "mark": 111.118053625,
-    "bid": 110.0653157,
-    "ask": 112.17079155
+    "mark": 111.53079702,
+    "bid": 110.4836145,
+    "ask": 112.57797954
   },
   "gate": "FILLED",
   "log": [
-    "10:07 HELS refresh. Live book 0/0. SOL mark 111.81. Gate FILLED. PnL -50. Mark above review 110.5, above invalidation 104.5",
-    "11:08 HELS refresh. Live book 0/0. SOL mark 112.25. Gate FILLED. PnL -50. Mark above review 110.5, above invalidation 104.5",
-    "12:08 HELS refresh. Live book 0/0. SOL mark 111.34. Gate FILLED. PnL -50. Mark above review 110.5, above invalidation 104.5",
     "13:12 HELS refresh. Live book 0/0. SOL mark 111.21. Gate FILLED. PnL -50. Mark above review 110.5, above invalidation 104.5",
     "14:08 HELS refresh. Live book 0/0. SOL mark 110.90. Gate FILLED. PnL -50. Mark above review 110.5, above invalidation 104.5",
     "15:09 HELS refresh. Live book 0/0. SOL mark 110.85. Gate FILLED. PnL -50. Mark above review 110.5, above invalidation 104.5",
     "16:09 HELS refresh. Live book 0/0. SOL mark 111.10. Gate FILLED. PnL -50. Mark above review 110.5, above invalidation 104.5",
-    "17:14 HELS refresh. Live book 0/0. SOL mark 111.12. Gate FILLED. PnL -50. Mark above review 110.5, above invalidation 104.5"
+    "17:14 HELS refresh. Live book 0/0. SOL mark 111.12. Gate FILLED. PnL -50. Mark above review 110.5, above invalidation 104.5",
+    "18:10 HELS refresh. Live book 0/0. SOL mark 111.53. Gate FILLED. PnL -50. Mark above review 110.5, above invalidation 104.5"
   ]
 }
