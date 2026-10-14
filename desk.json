@@ -1,5 +1,5 @@
 {
-  "stamped_at": "2026-10-14T14:08:30-07:00",
+  "stamped_at": "2026-10-14T15:10:37-07:00",
   "session": "A-001",
   "balance": 0,
   "cash": 0,
@@ -8,7 +8,7 @@
   "pnl": -50,
   "start_cash": 50,
   "session_start": "2026-09-07T02:44:16Z",
-  "flatten_note": "A-001 filled then flat. Live book 0 cash / 0 crypto. No open order. Path A read-only. Mark 103.92 below invalidation 104.5, below review 110.5.",
+  "flatten_note": "A-001 filled then flat. Live book 0 cash / 0 crypto. No open order. Path A read-only. Mark 104.36 below invalidation 104.5, below review 110.5.",
   "order": {
     "id_short": "6a9e2500",
     "symbol": "SOL",
@@ -22,18 +22,18 @@
     "review": 110.5
   },
   "sol": {
-    "mark": 103.923220165,
-    "bid": 102.94452505,
-    "ask": 104.90191528
+    "mark": 104.3590574,
+    "bid": 103.381,
+    "ask": 105.3371148
   },
   "gate": "FILLED",
   "log": [
-    "08:12 HELS refresh. Live book 0/0. SOL mark 103.56. Gate FILLED. PnL -50. Mark below invalidation 104.5, below review 110.5",
     "09:11 HELS refresh. Live book 0/0. SOL mark 103.98. Gate FILLED. PnL -50. Mark below invalidation 104.5, below review 110.5",
     "10:07 HELS refresh. Live book 0/0. SOL mark 105.00. Gate FILLED. PnL -50. Mark above invalidation 104.5, below review 110.5",
     "11:08 HELS refresh. Live book 0/0. SOL mark 104.23. Gate FILLED. PnL -50. Mark below invalidation 104.5, below review 110.5",
     "12:07 HELS refresh. Live book 0/0. SOL mark 103.95. Gate FILLED. PnL -50. Mark below invalidation 104.5, below review 110.5",
     "13:09 HELS refresh. Live book 0/0. SOL mark 104.29. Gate FILLED. PnL -50. Mark below invalidation 104.5, below review 110.5",
-    "14:08 HELS refresh. Live book 0/0. SOL mark 103.92. Gate FILLED. PnL -50. Mark below invalidation 104.5, below review 110.5"
+    "14:08 HELS refresh. Live book 0/0. SOL mark 103.92. Gate FILLED. PnL -50. Mark below invalidation 104.5, below review 110.5",
+    "15:10 HELS refresh. Live book 0/0. SOL mark 104.36. Gate FILLED. PnL -50. Mark below invalidation 104.5, below review 110.5"
   ]
 }
