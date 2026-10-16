@@ -1,5 +1,5 @@
 {
-  "stamped_at": "2026-10-15T17:11:07-07:00",
+  "stamped_at": "2026-10-15T18:10:30-07:00",
   "session": "A-001",
   "balance": 0,
   "cash": 0,
@@ -8,7 +8,7 @@
   "pnl": -50,
   "start_cash": 50,
   "session_start": "2026-09-07T02:44:16Z",
-  "flatten_note": "A-001 filled then flat. Live book 0 cash / 0 crypto. No open order. Path A read-only. Mark 105.40 above invalidation 104.5, below review 110.5.",
+  "flatten_note": "A-001 filled then flat. Live book 0 cash / 0 crypto. No open order. Path A read-only. Mark 105.46 above invalidation 104.5, below review 110.5.",
   "order": {
     "id_short": "6a9e2500",
     "symbol": "SOL",
@@ -22,16 +22,16 @@
     "review": 110.5
   },
   "sol": {
-    "mark": 105.402772685,
-    "bid": 104.40826571,
-    "ask": 106.39727966
+    "mark": 105.459391135,
+    "bid": 104.4768854,
+    "ask": 106.44189687
   },
   "gate": "FILLED",
   "log": [
-    "13:07 HELS refresh. Live book 0/0. SOL mark 105.92. Gate FILLED. PnL -50. Mark above invalidation 104.5, below review 110.5",
     "14:10 HELS refresh. Live book 0/0. SOL mark 105.55. Gate FILLED. PnL -50. Mark above invalidation 104.5, below review 110.5",
     "15:08 HELS refresh. Live book 0/0. SOL mark 105.96. Gate FILLED. PnL -50. Mark above invalidation 104.5, below review 110.5",
     "16:10 HELS refresh. Live book 0/0. SOL mark 105.42. Gate FILLED. PnL -50. Mark above invalidation 104.5, below review 110.5",
-    "17:11 HELS refresh. Live book 0/0. SOL mark 105.40. Gate FILLED. PnL -50. Mark above invalidation 104.5, below review 110.5"
+    "17:11 HELS refresh. Live book 0/0. SOL mark 105.40. Gate FILLED. PnL -50. Mark above invalidation 104.5, below review 110.5",
+    "18:10 HELS refresh. Live book 0/0. SOL mark 105.46. Gate FILLED. PnL -50. Mark above invalidation 104.5, below review 110.5"
   ]
 }
