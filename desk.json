@@ -1,5 +1,5 @@
 {
-  "stamped_at": "2026-10-30T20:08:25-07:00",
+  "stamped_at": "2026-10-30T21:08:50-07:00",
   "session": "A-001",
   "balance": 0,
   "cash": 0,
@@ -8,7 +8,7 @@
   "pnl": -50,
   "start_cash": 50,
   "session_start": "2026-09-07T02:44:16Z",
-  "flatten_note": "A-001 filled then flat. Live book 0 cash / 0 crypto. No open order. Path A read-only. Mark 96.62 below invalidation 104.5, below review 110.5.",
+  "flatten_note": "A-001 filled then flat. Live book 0 cash / 0 crypto. No open order. Path A read-only. Mark 96.16 below invalidation 104.5, below review 110.5.",
   "order": {
     "id_short": "6a9e2500",
     "symbol": "SOL",
@@ -22,18 +22,18 @@
     "review": 110.5
   },
   "sol": {
-    "mark": 96.619209435,
-    "bid": 95.71787357,
-    "ask": 97.5205453
+    "mark": 96.16225765,
+    "bid": 95.2682562,
+    "ask": 97.0562591
   },
   "gate": "FILLED",
   "log": [
-    "14:09 HELS refresh. Live book 0/0. SOL mark 94.99. Gate FILLED. PnL -50. Mark below invalidation 104.5, below review 110.5",
     "15:09 HELS refresh. Live book 0/0. SOL mark 95.39. Gate FILLED. PnL -50. Mark below invalidation 104.5, below review 110.5",
     "16:09 HELS refresh. Live book 0/0. SOL mark 95.84. Gate FILLED. PnL -50. Mark below invalidation 104.5, below review 110.5",
     "17:12 HELS refresh. Live book 0/0. SOL mark 96.14. Gate FILLED. PnL -50. Mark below invalidation 104.5, below review 110.5",
     "18:11 HELS refresh. Live book 0/0. SOL mark 96.69. Gate FILLED. PnL -50. Mark below invalidation 104.5, below review 110.5",
     "19:09 HELS refresh. Live book 0/0. SOL mark 96.40. Gate FILLED. PnL -50. Mark below invalidation 104.5, below review 110.5",
-    "20:08 HELS refresh. Live book 0/0. SOL mark 96.62. Gate FILLED. PnL -50. Mark below invalidation 104.5, below review 110.5"
+    "20:08 HELS refresh. Live book 0/0. SOL mark 96.62. Gate FILLED. PnL -50. Mark below invalidation 104.5, below review 110.5",
+    "21:08 HELS refresh. Live book 0/0. SOL mark 96.16. Gate FILLED. PnL -50. Mark below invalidation 104.5, below review 110.5"
   ]
 }
